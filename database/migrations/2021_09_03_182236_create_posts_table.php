@@ -17,10 +17,9 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('course_id');
             $table->string('name');
-            $table->boolean('free')->default(0);   
-            $table->timestamps();
-
+            $table->boolean('free')->default(0);
             $table->foreign('course_id')->references('id')->on('courses');
+            $table->timestamps();
         });
     }
 
